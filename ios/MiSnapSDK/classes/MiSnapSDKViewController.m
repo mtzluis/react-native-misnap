@@ -9,6 +9,9 @@
 #import <MiSnapSDK/MiSnapSDK.h>
 #import <MiSnapSDKCamera/MiSnapSDKCamera.h>
 
+
+
+#import "../../../../ios/onlinebankingmobile/AppDelegate.h"
 #import "MiSnapSDKViewController.h"
 #import "MiSnapSDKOverlayView.h"
 #import "MiSnapSDKTutorialViewController.h"
@@ -129,6 +132,7 @@
     self.captureView.delegate = self;
     self.cameraView.alpha = 0.0;
     self.orientationMode = (MiSnapOrientationMode)[self.captureParams[kMiSnapOrientationMode] integerValue];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -389,6 +393,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (wself.navigationController == nil)
                 {
+                    NSString *greetida = @"Luis Alfredo roate";
+                    NSLog(@"%@",greetida);
+                    [[AppDelegate log] printString:@"portrait"];
                     [wself dismissViewControllerAnimated:YES completion:nil];
                 }
                 else
